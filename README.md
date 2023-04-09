@@ -6,7 +6,7 @@ It uses the built-in ta.moonphase() function to get the moon phase data and the 
 The indicator can be used for visualizing the lunar cycles and their possible effects on the market
 
 To create this indicator in TradingView, you need to follow these steps:
-1. Open the TradingView website and log in to your account.
+1. Open the TradingView website.
 2. On the top left corner, click on the "Chart" tab to open a new chart.
 3. On the bottom panel, click on the "Pine Editor" tab to open the code editor.
 4. Copy and paste the code into the editor and click on the "Add to Chart" button on the top right corner.
