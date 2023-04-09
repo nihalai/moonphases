@@ -1,9 +1,15 @@
-//@version=5
-indicator("Moon Phases", overlay=true)
-// Get the moon phase data from the built-in indicator
-moonPhase = ta.moonphase()
-// Plot the moon phases as circles
-plotchar(moonPhase == 0, "New Moon", "●", location.abovebar, color.new, size = size.huge)
-plotchar(moonPhase == 1, "Full Moon", "●", location.abovebar, color.white, size = size.huge)
-// Color the bars between new and full moons
-barcolor(moonPhase == 2 ? color.green : moonPhase == 3 ? color.red : na)
+//@version=5 
+indicator("Moon Phases Strategy", overlay=true) 
+// Get the moon phase data from the built-in indicator 
+moonPhase = ta.moonphase(time(timeframe.period, "UTC")) 
+// Plot the moon phases as circles 
+plotchar(moonPhase == 0, "New Moon", "●", location.abovebar, color.new, size = size.huge) 
+plotchar(moonPhase == 1, "Full Moon", "●", location.abovebar, color.white, size = size.huge) 
+// Plot the moon phases as half circles 
+plotchar(moonPhase == 2, "Waxing Crescent", "◐", location.abovebar, color.green, size = size.huge) 
+plotchar(moonPhase == 3, "Waning Crescent", "◑", location.abovebar, color.red, size = size.huge) 
+plotchar(moonPhase == 4, "First Quarter", "◓", location.abovebar, color.green, size = size.huge) 
+plotchar(moonPhase == 5, "Third Quarter", "◒", location.abovebar, color.red, size = size.huge) 
+// Plot the moon phases as curved lines 
+plotchar(moonPhase == 6, "Waxing Gibbous", ")", location.abovebar, color.green, size = size.huge) 
+plotchar(moonPhase == 7, "Waning Gibbous", "(", location.abovebar, color.red, size = size.huge)
