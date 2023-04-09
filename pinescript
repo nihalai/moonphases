@@ -1,0 +1,9 @@
+//@version=5
+indicator("Moon Phases", overlay=true)
+// Get the moon phase data from the built-in indicator
+moonPhase = ta.moonphase()
+// Plot the moon phases as circles
+plotchar(moonPhase == 0, "New Moon", "●", location.abovebar, color.new, size = size.huge)
+plotchar(moonPhase == 1, "Full Moon", "●", location.abovebar, color.white, size = size.huge)
+// Color the bars between new and full moons
+barcolor(moonPhase == 2 ? color.green : moonPhase == 3 ? color.red : na)
